@@ -1,0 +1,24 @@
+<div class=" jumbotron">
+  <div class="row" *ngIf='currentAd'>
+    <div class="col-lg-6 col-xs-6">
+      <img src="{{currentAd.imagePath}}" alt="" class="details-img img-responsive">
+    </div>
+    <div class="col-lg-6 col-xs-12">
+      <div>
+        <h2>{{currentAd.name}}</h2>
+        <label for="">Fuel type:</label>
+        <p>{{currentAd.fuel}}</p>
+        <label for="">Description:</label>
+        <p>{{currentAd.description}}</p>
+        <label for="">Price:</label>
+        <p>{{currentAd.price}}$</p>
+        <div>
+          <button *ngIf='userUID === currentAd.userUID || isAdmin' class='btn-danger mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'
+            (click)='deleteAd()'>Delete</button>
+          <a *ngIf='userUID === currentAd.userUID || isAdmin' class="btn-warning mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+            routerLink="/car-ad/edit/{{id}}">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

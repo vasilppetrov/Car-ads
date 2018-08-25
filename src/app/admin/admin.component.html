@@ -1,0 +1,26 @@
+<div class="row">
+  <h2>All Users</h2>
+  <table class="table table-responsive">
+    <thead class="table-dark ">
+      <tr>
+        <th scope="col">Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Profile UID</th>
+        <th scope="col">User UID</th>
+        <th scope="col">Delete User</th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+      <tr *ngFor="let user of allUsers" class="table-secondary">
+        <th scope="row">Secondary</th>
+        <td>{{user.email}}</td>
+        <td>{{user.profileUID}}</td>
+        <td>{{user.userUID}}</td>
+        <td>
+          <button class="btn-danger mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)='deleteUser(user.profileUID)'>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

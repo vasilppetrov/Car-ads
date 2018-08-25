@@ -1,0 +1,72 @@
+<div class="row form-container">
+  <div class="col-lg-12">
+    <label for="">
+      <h2>New Ad</h2>
+    </label>
+    <form #f="ngForm" (ngSubmit)="create()">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label for="name">Title</label>
+            <input required class="form-control" type="text" id="name" name="name" [(ngModel)]="bindingModel.name" #name='ngModel' minlength="6"
+              pattern="^[A-Z][A-Za-z\d\s]+$">
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+              Title must start with a capital letter and must contain only letters and digits. Min 6 symbols!
+            </div>
+          </div>
+
+          <div class="creat-radio-buttons form-group">
+            <label class="form-check-label" for="Diesel">
+              <input type="radio" id="Diesel" class="form-check-input" [(ngModel)]="bindingModel.fuel" name="fuel" value="" checked="checked">
+              <span class="">Diesel</span>
+            </label>
+            <label class="form-check-label" for="Petrol">
+              <input type="radio" id="Petrol" class="form-check-input" [(ngModel)]="bindingModel.fuel" name="fuel" value="Petrol">
+              <span class="">Petrol</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-lg-12 ">
+          <div class="form-group ">
+            <label for="imagePath ">Image URL</label>
+            <input required type="text " id="imagePath " name="imagePath " [(ngModel)]="bindingModel.imagePath" class="form-control ">
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-lg-12 .card-img mb-30 ">
+          <img src="{{bindingModel.imagePath}} " required name="image" class="img-responsive form-img">
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-lg-12 ">
+          <div class="form-group ">
+            <label>Price:</label>
+            <input required type="number" id="price" name="price" [(ngModel)]="bindingModel.price" class="form-control" #price='ngModel'
+              min="0" max="10">
+            <div [hidden]="(price.valid || price.pristine) && (price.value <= 10 && price.value >= 0)" class="alert alert-danger">
+              Price minimum 0 maximum 10
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class=" row ">
+        <div class="col-lg-12 ">
+          <div class="form-group ">
+            <label for="">Description</label>
+            <textarea required type="text " id="description " class="form-control " #description='ngModel' name="description
+            " [(ngModel)]="bindingModel.description " rows="6 " minlength="10 "></textarea>
+            <div [hidden]="description.valid || description.pristine " class="alert alert-danger ">
+              Description is min 10 symbols!
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn-success mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect " [disabled]="f.invalid || bindingModel.price < 0 || bindingModel.price > 10"
+        type="submit ">Create</button>
+    </form>
+  </div>
+</div>

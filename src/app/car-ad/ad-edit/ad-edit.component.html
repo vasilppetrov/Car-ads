@@ -1,0 +1,62 @@
+<div class="row form-container">
+  <div class="col-lg-12" *ngIf='adToEdit'>
+    <label for="">
+      <h2>Edit Ad</h2>
+    </label>
+    <form #f="ngForm" (ngSubmit)="editAd()">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input required type="text" id="name" name="name" [(ngModel)]="adToEdit.name" class=" form-control ">
+          </div>
+          <div class="creat-radio-buttons form-group">
+            <label class="form-check-label" for="Diesel">
+              <input type="radio" id="Diesel" class="form-check-input" [(ngModel)]="adToEdit.fuel" name="fuel" value="Diesel" checked>
+              <span class="">Diesel</span>
+            </label>
+            <label class="form-check-label" for="Petrol">
+              <input type="radio" id="Petrol" class="form-check-input" [(ngModel)]="adToEdit.fuel" name="fuel" value="Petrol">
+              <span class="">Petrol</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-lg-12 ">
+          <div class="form-group ">
+            <label for="imagePath ">Image URL</label>
+            <input required type="text " id="imagePath " name="imagePath " [(ngModel)]="adToEdit.imagePath" class="form-control ">
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-lg-12 .card-img mb-30 ">
+          <img src="{{adToEdit.imagePath}} " class="img-responsive form-img">
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-lg-12 ">
+          <div class="form-group ">
+            <label>Price:</label>
+            <input required type="text" id="price " name="price " [(ngModel)]="adToEdit.price" class="form-control" #price='ngModel'>
+          </div>
+          <div [hidden]="(price.valid || price.pristine) && (price.value <= 10 && price.value >= 0)" class="alert alert-danger">
+            Price minimum 0 maximum 10
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-lg-12 ">
+          <div class="form-group ">
+            <label for="imagePath ">Description</label>
+            <textarea required type="text " id="description " class="form-control " name="description " [(ngModel)]="adToEdit.description "
+              rows="6 "></textarea>
+          </div>
+        </div>
+      </div>
+      <button class="btn-warning mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" [disabled]="f.invalid || adToEdit.price < 0 || adToEdit.price > 10"
+        type="submit ">Edit</button>
+    </form>
+  </div>
+</div>

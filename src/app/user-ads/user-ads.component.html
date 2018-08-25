@@ -1,0 +1,40 @@
+<div *ngIf='userAds'>
+  <div class="row">
+    <div *ngIf='!userAds.length'>
+      <h1>You dont Have Ads</h1>
+    </div>
+    <div class="col-md-4" *ngFor="let ad of userAds">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ad.name}}</h5>
+        </div>
+        <img style="height: 200px; width: 100%; display: block;" class="img-responsive" src="{{ad.imagePath}}" alt="Card image">
+        <div class="card-body">
+          <p class="card-text">{{ad.description| slice: 0: 50}}</p>...
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h4>Fuel: </h4>{{ad.fuel}}</li>
+          <li class="list-group-item">
+            <h4>Price:
+              <span>{{ad.price}}$</span>
+            </h4>
+          </li>
+        </ul>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xs-2 ">
+              <a routerLink="/car-ad/details/{{ad.id}}" class=" card-link btn-info mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Details</a>
+            </div>
+            <div class="col-xs-2 ">
+              <a routerLink="/car-ad/edit/{{ad.id}}" class="card-link btn-warning mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Edit</a>
+            </div>
+            <div class="col-xs-2 ">
+              <a id="del-btn" class=" card-link btn-danger mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)='deleteAd(ad.id)'>Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

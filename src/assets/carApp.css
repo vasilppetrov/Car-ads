@@ -1,0 +1,150 @@
+.card-img {
+  width: 100%;
+  height: 220px;
+}
+
+.all-ads .col-lg-3,
+.demo-card-wide {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.main-container {
+  margin-top: 40px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+/* .mdl-radio {
+  margin-right: 15px;
+} */
+.form-check-label {
+  padding-right: 30px;
+}
+
+.creat-radio-buttons {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.creat-radio-buttons span {
+  font-size: 14px;
+}
+
+.jumbotron label {
+  font-size: 22px;
+  color: rgba(26, 26, 26, 0.954);
+}
+
+.jumbotron p,
+.form-container label {
+  font-size: 18px;
+}
+
+.jumbotron button {
+  margin-right: 20px;
+}
+
+.form-container label {
+  color: black;
+}
+
+.form-container input,
+.form-container textarea {
+  font-size: 16px;
+}
+
+.navbar-collapse .navbar-nav {
+  margin-right: 0px !important;
+  width: 100%;
+}
+
+#inputDefault {
+  margin-bottom: 10px;
+}
+
+.details-img {
+  width: 100%;
+  height: 360px;
+  -webkit-box-shadow: 11px 34px 90px -17px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 34px 90px -17px rgba(0, 0, 0, 0.75);
+  box-shadow: 11px 34px 90px -17px rgba(0, 0, 0, 0.75);
+}
+
+.demo-card-wide,
+.card {
+  -webkit-box-shadow: 19px 6px 95px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 19px 6px 95px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 19px 6px 95px 0px rgba(0, 0, 0, 0.75);
+}
+
+.nav-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.form-img {
+  width: 350px;
+}
+
+.card-body a {
+  margin-left: 8px;
+}
+
+.card-body .col-xs-2  #del-btn {
+  color: white;
+}
+
+.demo-card-wide,
+.mdl-card__supporting-text {
+  height: 100%;
+}
+
+.mdl-card__actions  .btn-warning {
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+.mdl-card__title-text,
+.price-card {
+  margin-left: 16px;
+}
+
+.animation {
+  background: linear-gradient(230deg, #7ab77a, #e7dd5f, #d2b964, #f3c65e, #fab85e, #f38967, #f5a184, #f5927b, #f07c89, #e88d8f, #77cbc5, #d27893, #626270);
+  background-size: 800% 800%;
+  -webkit-animation: AnimationName 12s ease infinite;
+  animation: AnimationName 12s ease infinite;
+  width: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 39%;
+  }
+
+  50% {
+    background-position: 100% 62%;
+  }
+
+  100% {
+    background-position: 0% 39%;
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 39%;
+  }
+
+  50% {
+    background-position: 100% 62%;
+  }
+
+  100% {
+    background-position: 0% 39%;
+  }
+}
