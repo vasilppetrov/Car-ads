@@ -9,8 +9,8 @@ import * as firebase from 'firebase';
 const baseUrl = 'https://car-app-d908c.firebaseio.com/';
 const carAdsUrl = baseUrl + 'car-ads/';
 const usersUrl = baseUrl + 'users/';
-const urlTest = baseUrl + 'car-ads.json?orderBy="$value"&startAt=userUID=pretty';
-// 'https://dinosaur-facts.firebaseio.com/dinosaurs.json?orderBy="$key"&startAt="a"&endAt="m"&print=pretty'
+
+
 @Injectable({
     providedIn: 'root'
 })
